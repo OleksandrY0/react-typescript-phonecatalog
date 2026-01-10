@@ -1,5 +1,5 @@
-@use '../../styles/mixins.scss';
-@use '../../styles/vars.scss';
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/vars.scss' as *;
 
 .back {
   display: flex;

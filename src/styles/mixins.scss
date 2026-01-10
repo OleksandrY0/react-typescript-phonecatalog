@@ -1,4 +1,4 @@
-@use './vars';
+@use './vars' as *;
 
 @mixin mont($weight: 600, $size: 16px) {
   font-family: 'Mont', sans-serif;
