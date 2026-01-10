@@ -1,5 +1,5 @@
-@import '../../styles/vars.scss';
-@import '../../styles/mixins.scss';
+@use '../../styles/vars.scss';
+@use '../../styles/mixins.scss';
 
 .cart-item {
   display: flex;
