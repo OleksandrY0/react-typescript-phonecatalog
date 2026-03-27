@@ -5,10 +5,11 @@ The app includes routing, product pages, favorites, and a shopping cart.
 
 ## 🌐 Preview
 
-- [Live Demo](https://OleksandrY0.github.io/react-typescript-phonecatalog/)
+- [Live Demo](https://oleksandry0.github.io/react_phone-catalog/)
 - [Figma Design](https://www.figma.com/design/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog--V2--Original?node-id=0-1&p=f)
 
 ## 🚀 Tech Stack
+
 - **React**
 - **TypeScript**
 - **React Router v6 (HashRouter)**
@@ -17,6 +18,7 @@ The app includes routing, product pages, favorites, and a shopping cart.
 - **Vite**
 
 ## ✨ Key Features
+
 - Home page with product overview
 - Category pages:
   - Phones

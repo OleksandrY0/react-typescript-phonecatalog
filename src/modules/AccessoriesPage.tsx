@@ -8,7 +8,11 @@ export const AccessoriesPage = () => {
   return (
     <>
       <BreadCrumbs />
-      <Catalog pageName={'Accessories'} products={accessories.items} loading={accessories.loading} />
+      <Catalog
+        pageName={'Accessories'}
+        products={accessories.items}
+        loading={accessories.loading}
+      />
     </>
   );
 };

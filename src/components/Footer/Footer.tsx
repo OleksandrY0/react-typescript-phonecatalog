@@ -16,7 +16,11 @@ export const Footer = () => {
         <div className="footer__content">
           <div className="footer__logo">
             <Link to="/">
-              <img src="./img/main-logo.png" alt="logo" className="footer__logo__link" />
+              <img
+                src="./img/main-logo.png"
+                alt="logo"
+                className="footer__logo__link"
+              />
             </Link>
           </div>
           <div className="footer__links">
@@ -33,7 +37,11 @@ export const Footer = () => {
           <div className="footer__go-up" onClick={() => scrollToTop()}>
             <span className="footer__go-up__text">Back to top</span>
             <div className="footer__go-up__img">
-              <img src="./img/up.png" alt="up" className="footer__go-up__img__link" />
+              <img
+                src="./img/up.png"
+                alt="up"
+                className="footer__go-up__img__link"
+              />
             </div>
           </div>
         </div>

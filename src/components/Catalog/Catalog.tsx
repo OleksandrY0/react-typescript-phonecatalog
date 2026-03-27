@@ -19,7 +19,9 @@ export const Catalog: React.FC<Props> = ({ pageName, products, loading }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sortBy, setSortBy] = useState<SortBy>('Newest');
   const [itemsOnPage, setItemsOnPage] = useState<itemsOnPage>('All');
-  const [currentPage, setCurrentPage] = useState<number>(Number(searchParams.get('page')) || 1);
+  const [currentPage, setCurrentPage] = useState<number>(
+    Number(searchParams.get('page')) || 1,
+  );
   const visibleProducts = [...products];
 
   const handleSetSortBy = (sortBy: string) => {
@@ -113,7 +115,8 @@ export const Catalog: React.FC<Props> = ({ pageName, products, loading }) => {
     visibleProducts.sort((p1, p2) => p1.priceRegular - p2.priceRegular);
   }
 
-  const itemsPerPage = itemsOnPage === 'All' ? visibleProducts.length : Number(itemsOnPage);
+  const itemsPerPage =
+    itemsOnPage === 'All' ? visibleProducts.length : Number(itemsOnPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const productsToShow = visibleProducts.slice(startIndex, endIndex);
@@ -140,7 +143,10 @@ export const Catalog: React.FC<Props> = ({ pageName, products, loading }) => {
     }
   };
 
-  const getPageNumbers = (current: number, total: number): (number | string)[] => {
+  const getPageNumbers = (
+    current: number,
+    total: number,
+  ): (number | string)[] => {
     const delta = 1;
     const range: (number | string)[] = [];
     const left = Math.max(2, current - delta);
@@ -244,28 +250,47 @@ export const Catalog: React.FC<Props> = ({ pageName, products, loading }) => {
 
           {pages > 1 && itemsOnPage !== 'All' && (
             <div className="catalog__pagination">
-              <div className="catalog__pagination__btn" onClick={() => prevPage()}>
-                <img src="./img/left.png" alt="left" className="catalog__pagination__btn__img " />
+              <div
+                className="catalog__pagination__btn"
+                onClick={() => prevPage()}
+              >
+                <img
+                  src="./img/left.png"
+                  alt="left"
+                  className="catalog__pagination__btn__img "
+                />
               </div>
               {getPageNumbers(currentPage, pages).map((p, index) =>
                 typeof p === 'number' ? (
                   <div
                     key={p}
                     className={`catalog__pagination__btn ${
-                      p === currentPage ? 'catalog__pagination__btn--active' : ''
+                      p === currentPage
+                        ? 'catalog__pagination__btn--active'
+                        : ''
                     }`}
                     onClick={() => handleSetCurrentPage(p)}
                   >
                     {p}
                   </div>
                 ) : (
-                  <span key={`ellipsis-${index}`} className="catalog__pagination__ellipsis">
+                  <span
+                    key={`ellipsis-${index}`}
+                    className="catalog__pagination__ellipsis"
+                  >
                     {p}
                   </span>
                 ),
               )}
-              <div className="catalog__pagination__btn" onClick={() => nextPage()}>
-                <img src="./img/right.png" alt="right" className="catalog__pagination__btn__img " />
+              <div
+                className="catalog__pagination__btn"
+                onClick={() => nextPage()}
+              >
+                <img
+                  src="./img/right.png"
+                  alt="right"
+                  className="catalog__pagination__btn__img "
+                />
               </div>
             </div>
           )}
